@@ -12,9 +12,17 @@ function SinglyLinkedList() {
 SinglyLinkedList.prototype.add = function(data) {
   var node = new Node(data);
   if(!this.head) {
-    //TODO
+   this.head = node;
+   this.numberOfValues++;
+         
+   return node;
   } else {
-    //TODO
+	this.tail = node	
+   this.tail.next = node;
+ 
+   this.numberOfValues++;
+     
+   return node;
   }
 
 };
@@ -79,3 +87,4 @@ module.exports = {
   SinglyLinkedList : SinglyLinkedList,
   Node : Node
 };
+
